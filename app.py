@@ -93,9 +93,25 @@ def index():
 admin = flask_admin.Admin(
     base.app,
     '后台管理',
-    base_template='my_master.html',
+    # base_template='my_master.html',
     template_mode='bootstrap3',
 )
+
+# class RoleModelView(MyModelView):
+#     column_labels = {'name': '角色名', 'description': '描述'}
+
+
+# class PermissionModelView(MyModelView):
+#     form_excluded_columns = ['routers']
+#     column_labels = {'name': '名称'}
+
+
+# class UserModelView(MyModelView):
+#     form_excluded_columns = ['created_at']
+#     column_exclude_list = ['password', ]
+
+#     column_labels = {'role': '角色', 'name': '用户名', 'password': '密码',
+#                      'active': '激活', 'created_at': '创建时间'}
 
 # Add model views
 admin.add_view(MyModelView(Role, base.db.session))

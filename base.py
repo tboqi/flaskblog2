@@ -109,23 +109,6 @@ class MyModelView(sqla.ModelView):
         #         return redirect(url_for('security.login', next=request.url))
 
 
-class RoleModelView(MyModelView):
-    column_labels = {'name': '角色名', 'description': '描述'}
-
-
-class PermissionModelView(MyModelView):
-    form_excluded_columns = ['routers']
-    column_labels = {'name': '名称'}
-
-
-class UserModelView(MyModelView):
-    form_excluded_columns = ['created_at']
-    column_exclude_list = ['password', ]
-
-    column_labels = {'role': '角色', 'name': '用户名', 'password': '密码',
-                     'active': '激活', 'created_at': '创建时间'}
-
-
 class CKTextAreaWidget(TextArea):
 
     def __call__(self, field, **kwargs):
