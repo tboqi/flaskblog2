@@ -93,7 +93,7 @@ def index():
 admin = flask_admin.Admin(
     base.app,
     '后台管理',
-    base_template='my_master.html',
+    # base_template='my_master.html',
     template_mode='bootstrap3',
 )
 
@@ -103,10 +103,10 @@ admin.add_view(MyModelView(User, base.db.session))
 
 # admin.add_view(base.PermissionModelView(base.Permission, base.db.session))
 # admin.add_view(base.MyModelView(base.Router, base.db.session))
-admin.add_view(model.article.ArticleView(
-    model.article.Article, base.db.session))
-admin.add_view(model.article.CategoryView(
-    model.article.Category, base.db.session))
+# admin.add_view(model.article.ArticleView(
+#     model.article.Article, base.db.session))
+# admin.add_view(model.article.CategoryView(
+#     model.article.Category, base.db.session))
 
 # define a context processor for merging flask-admin's template context into the
 # flask-security views.
